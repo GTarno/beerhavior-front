@@ -10,6 +10,12 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GitHubLoginComponent } from './login/git-hub-login/git-hub-login.component';
+import { HeaderComponent } from './header/header.component';
+import { ProfileTypeComponent } from './register/profile-type/profile-type.component';
+import { AppHeaderComponent } from './app-header/app-header.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { RegisterFormComponentComponent } from './register-form/register-form-component/register-form-component.component';
+import { GenericErrorComponent } from './error/generic-error/generic-error.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import { GitHubLoginComponent } from './login/git-hub-login/git-hub-login.compon
     FormLoginComponent,
     RegisterComponent,
     ProfileComponent,
-    GitHubLoginComponent
+    GitHubLoginComponent,
+    HeaderComponent,
+    ProfileTypeComponent,
+    AppHeaderComponent,
+    RegisterFormComponent,
+    RegisterFormComponentComponent,
+    GenericErrorComponent
   ],
   imports: [
     BrowserModule,
