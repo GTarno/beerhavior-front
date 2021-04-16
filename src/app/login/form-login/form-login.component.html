@@ -1,3 +1,4 @@
+<div fxLayout="row" fxLayoutAlign="center center" >
 <div class="main-div">
     <mat-card>
       <form class="example-form">
@@ -13,14 +14,15 @@
             <input matInput type="password" />
           </mat-form-field>
         </div>
-        <div class="col-12">
+        <div class="col-12" fxLayout="row" fxLayoutAlign="center center" >
           <button class="align-center" mat-raised-button color="primary">
             Login
           </button>
         </div>
       </form>
       <div class="col-12 align-text">
-      <p>Não possui uma conta? <a>Registre-se agora!</a> </p>
+      <p>Não possui uma conta? <a routerLink="/registro/tipo">Registre-se agora!</a> </p>
     </div>
     </mat-card>
+</div>
 </div>

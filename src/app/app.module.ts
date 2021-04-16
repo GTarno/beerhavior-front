@@ -21,6 +21,13 @@ import { ProfileProgrammerComponent } from './profile-components/profile-program
 import { ProfileRequestJoinProjectComponent } from './profile-components/profile-request-join-project/profile-request-join-project.component';
 import { ProfileScoreComponent } from './profile-components/profile-score/profile-score.component';
 import { ProfileManagerComponent } from './profile-components/profile-manager/profile-manager.component';
+import { PrizeTableComponent } from './prize/prize-table/prize-table.component';
+import { PrizeTableItensComponent } from './prize/prize-table-itens/prize-table-itens.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CreatePrizeComponent } from './prize/create-prize/create-prize.component';
+import { CreatePrizeFormComponent } from './prize/create-prize-form/create-prize-form.component';
+import { RedeemPrizeComponent } from './prize/redeem-prize/redeem-prize.component';
+import { RedeemPrizeFormComponent } from './prize/redeem-prize-form/redeem-prize-form.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +47,20 @@ import { ProfileManagerComponent } from './profile-components/profile-manager/pr
     ProfileProgrammerComponent,
     ProfileRequestJoinProjectComponent,
     ProfileScoreComponent,
-    ProfileManagerComponent
+    ProfileManagerComponent,
+    PrizeTableComponent,
+    PrizeTableItensComponent,
+    CreatePrizeComponent,
+    CreatePrizeFormComponent,
+    RedeemPrizeComponent,
+    RedeemPrizeFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

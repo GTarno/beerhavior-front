@@ -1,0 +1,39 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div>
+    <form class="example-form">
+      <div class="col-12" fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field appearance="fill">
+          <mat-label>Escolha a recompensa</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-12" fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field>
+          <mat-label>Quantidade</mat-label>
+          <input matInput type="number" />
+        </mat-form-field>
+      </div>
+      <div class="col-12" fxLayout="row" fxLayoutAlign="center center">
+        <p>Total: 600 Pontos</p>
+      </div>
+      <div class="col-12" fxLayout="row" fxLayoutAlign="center center">
+        <button *ngIf="redeemed == false" mat-raised-button color="primary" (click)="redeem()">
+          Resgatar
+        </button>
+        <button *ngIf="redeemed == true" mat-button disabled>Resgatar</button>
+      </div>
+    </form>
+    <div *ngIf="redeemed == true">
+      <div class="col-12 spacing" fxLayout="row" fxLayoutAlign="center center">
+        <p>Resgate disponível no terminal ou anote o seu voucher:</p>
+      </div>
+      <div class="col-12" fxLayout="row" fxLayoutAlign="center center">
+        <h2>VOUCHER001</h2>
+      </div>
+    </div>
+  </div>
+</div>

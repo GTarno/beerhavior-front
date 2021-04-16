@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "beerhavior-front"
+  "defaultProject": "beerhavior-front",
+  "cli": {
+    "analytics": false
+  }
 }

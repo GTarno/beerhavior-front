@@ -1,4 +1,15 @@
 <app-header></app-header>
-<h1>Escolha seu tipo de perfil!</h1>
-<app-profile-type type="Admin"></app-profile-type>
-<app-profile-type type="Colaborador"></app-profile-type>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-card>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-card-title>Escolha seu tipo de perfil!</mat-card-title>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" class="spacing">
+      <app-profile-type type="Admin" icon="person"></app-profile-type>
+      <app-profile-type
+        type="Colaborador"
+        icon="person_outline"
+      ></app-profile-type>
+    </div>
+  </mat-card>
+</div>

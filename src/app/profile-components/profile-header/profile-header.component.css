@@ -18,5 +18,13 @@ mat-expansion-panel{
   margin-top: 1rem;
 }
 .admin{
-  color: rgb(226, 247, 37)
+  color: rgb(226, 247, 37);
+  margin: 0 0 0 1rem;
+}
+h1{
+  margin: 0 0 0 1rem;
+}
+.spacing{
+  margin-top: -19px;
+  margin-bottom: 8px;
 }

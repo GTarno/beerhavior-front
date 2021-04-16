@@ -4,3 +4,6 @@ mat-card{
 .btn{
     margin-left: 1rem;
 }
+.score{
+    font-weight: bold;
+}

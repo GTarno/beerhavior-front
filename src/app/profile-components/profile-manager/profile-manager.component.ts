@@ -1,4 +1,7 @@
+import { CreatePrizeComponent } from './../../prize/create-prize/create-prize.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PrizeTableComponent } from 'src/app/prize/prize-table/prize-table.component';
 
 @Component({
   selector: 'app-profile-manager',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileManagerComponent implements OnInit {
 
-  constructor() { }
+  public isAdmin: boolean = true;
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
-
+  
+  openPrizeTable(): void {
+    const dialogRef = this.dialog.open(PrizeTableComponent, {
+      width: '750px',
+      data: {admin: this.isAdmin}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  addPrize(): void {
+    const dialogRef = this.dialog.open(CreatePrizeComponent, {
+      width: '400px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }

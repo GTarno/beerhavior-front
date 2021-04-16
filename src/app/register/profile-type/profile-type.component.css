@@ -3,3 +3,13 @@ a{
     text-decoration: underline;
     cursor: pointer;
 }
+span{
+    font-size: xx-large;
+    border-style: solid;
+    border-radius: 50%;
+    padding: 6px;
+    color: #3f51b5
+}
+.spacing{
+    padding: 0 3rem;
+}
