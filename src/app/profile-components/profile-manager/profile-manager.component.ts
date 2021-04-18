@@ -2,6 +2,7 @@ import { CreatePrizeComponent } from './../../prize/create-prize/create-prize.co
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PrizeTableComponent } from 'src/app/prize/prize-table/prize-table.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-manager',
@@ -12,7 +13,8 @@ export class ProfileManagerComponent implements OnInit {
 
   public isAdmin: boolean = true;
   constructor(
-    public dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -34,5 +36,8 @@ export class ProfileManagerComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+  createNewProject(){
+    this.router.navigate(['/novo-projeto'])
   }
 }

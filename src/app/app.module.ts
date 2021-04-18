@@ -1,6 +1,6 @@
 import { MaterialModule } from './material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +28,8 @@ import { CreatePrizeComponent } from './prize/create-prize/create-prize.componen
 import { CreatePrizeFormComponent } from './prize/create-prize-form/create-prize-form.component';
 import { RedeemPrizeComponent } from './prize/redeem-prize/redeem-prize.component';
 import { RedeemPrizeFormComponent } from './prize/redeem-prize-form/redeem-prize-form.component';
+import { NewProjectComponent } from './new-project/new-project.component';
+import { NewProjectFormComponent } from './new-project/new-project-form/new-project-form.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { RedeemPrizeFormComponent } from './prize/redeem-prize-form/redeem-prize
     CreatePrizeComponent,
     CreatePrizeFormComponent,
     RedeemPrizeComponent,
-    RedeemPrizeFormComponent
+    RedeemPrizeFormComponent,
+    NewProjectComponent,
+    NewProjectFormComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +67,10 @@ import { RedeemPrizeFormComponent } from './prize/redeem-prize-form/redeem-prize
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }

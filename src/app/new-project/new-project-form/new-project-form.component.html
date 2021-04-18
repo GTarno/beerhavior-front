@@ -1,0 +1,62 @@
+<mat-card>
+  <mat-card-title>Cadastro do projeto</mat-card-title>
+  <mat-card-subtitle
+    >Adicione o projeto na plataforma!</mat-card-subtitle
+  >
+  <mat-card-content>
+    <form class="example-form">
+      <div class="col-12">
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-form-field>
+          <mat-label>Código</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-form-field>
+          <mat-label>URL do Git</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="col-12 search-person">
+          <mat-form-field>
+            <mat-label>Adicionar colaborador</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+        <button mat-icon-button color="primary">
+          <mat-icon>person_search</mat-icon>
+        </button>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end start">
+        <a>Adicionar</a>
+      </div>
+      <div class="spacing">
+        <mat-chip-list #chipList aria-label="Fruit selection">
+          <mat-chip
+            *ngFor="let fruit of fruits"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(fruit)"
+          >
+            {{ fruit.name }}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+        </mat-chip-list>
+      </div>
+    </form>
+    <mat-card-actions>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div class="col-12 add-button">
+          <button mat-raised-button color="primary">Cadastrar</button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

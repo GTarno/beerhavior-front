@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileRequestJoinProjectComponent implements OnInit {
 
-  private testeErro: boolean = true
+  public testeErro: boolean = true
   constructor() { }
 
   ngOnInit(): void {

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';;
   styleUrls: ['./profile-admin.component.css'],
 })
 export class ProfileAdminComponent implements OnInit {
-  private isAdmin: boolean = true;
+  public isAdmin: boolean = true;
   constructor() {}
 
   ngOnInit(): void {}
