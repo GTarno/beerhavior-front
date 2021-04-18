@@ -1,0 +1,22 @@
+.add-button {
+  width: 120px;
+}
+mat-card {
+  margin: 20px;
+  max-width: 450px;
+  min-width: 350px;
+}
+mat-form-field {
+  width: 100%;
+}
+a {
+  color: #3f51b5;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.spacing {
+    margin-top: 1em;
+}
+.search-person {
+    width: 90%;
+  }

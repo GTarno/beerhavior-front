@@ -1,0 +1,30 @@
+img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+mat-card {
+  margin: 20px;
+}
+a{ 
+    color:#3f51b5;
+    text-decoration: underline;
+    cursor: pointer;
+}
+mat-expansion-panel{
+    max-width: 300px;
+}
+.btn{
+  margin-top: 1rem;
+}
+.admin{
+  color: rgb(226, 247, 37);
+  margin: 0 0 0 1rem;
+}
+h1{
+  margin: 0 0 0 1rem;
+}
+.spacing{
+  margin-top: -19px;
+  margin-bottom: 8px;
+}

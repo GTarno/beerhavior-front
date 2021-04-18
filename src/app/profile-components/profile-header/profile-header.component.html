@@ -1,0 +1,25 @@
+<mat-card>
+  <div fxLayout="row" fxLayoutAlign="end start"><a>Editar</a></div>
+  <div fxLayout="row" fxLayoutAlign="start center" class="spacing">
+    <img src="./../../../assets/EiUGGxoWsAI7c1b.jpg" alt="beerhavior" />
+    <div fxLayout="column" fxLayoutAlign="space-evenly start">
+      <h1>Nome</h1>
+      <p *ngIf="admin == true" class="admin">Admin</p>
+    </div>
+  </div>
+  <p>Usuario</p>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Projetos </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Projeto 1</p>
+    <p>Projeto 2</p>
+    <p>Projeto 3</p>
+  </mat-expansion-panel>
+  <button *ngIf="admin == true" class="btn" mat-raised-button color="primary">
+    Dashboard
+  </button>
+</mat-card>

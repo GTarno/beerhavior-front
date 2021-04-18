@@ -1,0 +1,30 @@
+<div fxLayout="row" fxLayoutAlign="space-around stretch">
+    <table fxFlex mat-table [dataSource]="products">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Produto</th>
+        <td mat-cell *matCellDef="let product">{{ product.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="availability">
+        <th mat-header-cell *matHeaderCellDef>Disponibilidade</th>
+        <td mat-cell *matCellDef="let product">{{ product.availability }}</td>
+      </ng-container>
+      <ng-container matColumnDef="stock">
+        <th mat-header-cell *matHeaderCellDef>Estoque</th>
+        <td mat-cell *matCellDef="let product">{{ product.stock }}</td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Custo</th>
+        <td mat-cell *matCellDef="let product">{{ product.price }}</td>
+      </ng-container>
+      <ng-container *ngIf="admin == true" matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let product"><a>Editar</a></td>
+      </ng-container>
+      <ng-container *ngIf="admin == true" matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let product"><a>Excluir</a></td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="prizeColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: prizeColumns"></tr>
+    </table>
+  </div>

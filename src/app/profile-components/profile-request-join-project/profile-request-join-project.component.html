@@ -1,0 +1,11 @@
+<mat-card>
+    <p>Ingressar em um novo projeto</p>
+    <mat-form-field class="example-full-width">
+        <mat-label>Código do projeto</mat-label>
+        <input matInput>
+        <mat-error *ngIf="testeErro">
+            Projeto não encontrado!
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="btn">Solicitar</button>
+</mat-card>

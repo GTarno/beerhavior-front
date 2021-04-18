@@ -1,0 +1,10 @@
+<div fxLayout="row" fxLayoutAlign="end start" >
+<button mat-icon-button color="primary" aria-label="close" (click)="close()">
+  <mat-icon>close</mat-icon>
+</button>
+</div>
+<span mat-dialog-title class="title">Tabela de recompensas</span>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <app-prize-table-itens [admin]="isAdmin"></app-prize-table-itens>
+</div>
