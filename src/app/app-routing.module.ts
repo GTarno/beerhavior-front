@@ -1,3 +1,5 @@
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProjectComponent } from './project/project.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { ProfileAdminComponent } from './profile-components/profile-admin/profile-admin.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
@@ -14,6 +16,8 @@ const routes: Routes = [
     { path: 'inicio/colaborador', component: ProfileProgrammerComponent },
     { path: 'inicio/admin', component: ProfileAdminComponent },
     { path: 'novo-projeto', component: NewProjectComponent },
+    { path: 'projeto', component: ProjectComponent },
+    { path: 'dashboard', component: DashboardComponent },
 ];
 
 @NgModule({
