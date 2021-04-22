@@ -1,0 +1,27 @@
+<mat-card>
+  <div fxLayout="row" fxLayoutAlign="space-between start">
+    <h1>Nome</h1>
+    <p>Código: PRO465</p>
+    <a>Editar</a>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start start" style="margin: -20px 0 20px 0">
+    <a>Git</a>
+  </div>
+  <p>Administrador</p>
+  <p style="font-weight: bold">Admin 1</p>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Colaboradores </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Colaborador 1</p>
+    <p>Colaborador 2</p>
+    <p>Colaborador 3</p>
+  </mat-expansion-panel>
+  <button class="btn" mat-raised-button color="primary" (click)="addColaborador()">
+    <mat-icon>add</mat-icon>
+    Adicionar ou remover colaborador
+  </button>
+</mat-card>

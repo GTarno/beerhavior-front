@@ -30,6 +30,18 @@ import { RedeemPrizeComponent } from './prize/redeem-prize/redeem-prize.componen
 import { RedeemPrizeFormComponent } from './prize/redeem-prize-form/redeem-prize-form.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { NewProjectFormComponent } from './new-project/new-project-form/new-project-form.component';
+import { ProjectComponent } from './project/project.component';
+import { ProjectHeaderComponent } from './project/project-header/project-header.component';
+import { ProjectScoreComponent } from './project/project-score/project-score.component';
+import { ProjectPendencyComponent } from './project/project-pendency/project-pendency.component';
+import { AddColaboratorComponent } from './project/project-header/add-colaborator/add-colaborator.component';
+import { ColaboratorComponent } from './project/project-header/add-colaborator/colaborator/colaborator.component';
+import { PendencyComponent } from './project/project-pendency/pendency/pendency.component';
+import { PendencyAprovalComponent } from './project/project-pendency/pendency/pendency-aproval/pendency-aproval.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
+import { DashboardPointsComponent } from './dashboard/dashboard-points/dashboard-points.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -57,14 +69,26 @@ import { NewProjectFormComponent } from './new-project/new-project-form/new-proj
     RedeemPrizeComponent,
     RedeemPrizeFormComponent,
     NewProjectComponent,
-    NewProjectFormComponent
+    NewProjectFormComponent,
+    ProjectComponent,
+    ProjectHeaderComponent,
+    ProjectScoreComponent,
+    ProjectPendencyComponent,
+    AddColaboratorComponent,
+    ColaboratorComponent,
+    PendencyComponent,
+    PendencyAprovalComponent,
+    DashboardComponent,
+    DashboardContentComponent,
+    DashboardPointsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

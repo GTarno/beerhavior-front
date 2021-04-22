@@ -38,6 +38,6 @@ export class ProfileManagerComponent implements OnInit {
     });
   }
   createNewProject(){
-    this.router.navigate(['/novo-projeto'])
+    this.router.navigate(['/novo-projeto']);
   }
 }
