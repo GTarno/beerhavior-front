@@ -41,7 +41,7 @@ import { PendencyAprovalComponent } from './project/project-pendency/pendency/pe
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
 import { DashboardPointsComponent } from './dashboard/dashboard-points/dashboard-points.component';
-
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -87,7 +87,8 @@ import { DashboardPointsComponent } from './dashboard/dashboard-points/dashboard
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
