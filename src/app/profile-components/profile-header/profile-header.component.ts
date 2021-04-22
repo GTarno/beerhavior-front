@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -9,10 +10,15 @@ export class ProfileHeaderComponent implements OnInit {
 
   panelOpenState = false;
   @Input() admin: boolean;
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     console.log(this.admin)
   }
 
+  goToDashboard(): void{
+    this.router.navigate(['/dashboard']);
+  }
 }
