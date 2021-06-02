@@ -1,4 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #292929;
+}
+.mat-card {
+  background-color: #3b3b3b;
+}
+h1 {
+  color: white;
+}
+p {
+  color: white;
+}
+h2 {
+  color: white;
+}
+h3 {
+  color: white;
+}
+h4 {
+  color: white;
+}
+mat-label {
+  color: white;
+}
+.mat-dialog-container {
+  background-color: #383838;
+  color: white;
+}
+.mat-option {
+  color: #29347b;
+  background-color: #292929;
+}
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #29347b;
+}
+.mat-select-value-text {
+  color: white;
+}
+td {
+  background: #737272;
+  color: white !important;
+}
+.mat-expansion-panel-body {
+  background: #636363;
+  color: #29347b;
+}
+
+mat-expansion-panel-header {
+  background: #636363;
+}
+
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+  color: #29347b;
+}
+
+mat-card-title{
+    color: white;
+}
+
+.mat-card-subtitle{
+    color: white;
+}
+
+.material-icons{
+    color: white;
+}

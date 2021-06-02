@@ -1,13 +1,18 @@
-.button{
-    margin-left: 20px;
-    width: 200px;
-    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
-    cursor: pointer;
-    text-align: center;
-    min-width: 64px;
-    padding: 0 16px;
-    border-radius: 4px;
+.button {
+  margin-left: 20px;
+  width: 200px;
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+  cursor: pointer;
+  text-align: center;
+  min-width: 64px;
+  padding: 0 16px;
+  border-radius: 4px;
+  color: white;
 }
-img{ 
-    padding: 2px;
+img {
+  padding: 2px;
+}
+.mat-button {
+  background: #3f51b5;
 }
