@@ -42,6 +42,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
 import { DashboardPointsComponent } from './dashboard/dashboard-points/dashboard-points.component';
 import { ChartsModule } from 'ng2-charts';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { ChartsModule } from 'ng2-charts';
     MaterialModule,
     FlexLayoutModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
