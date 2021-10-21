@@ -1,4 +1,4 @@
-import { ProjectModel, ProjectsAdminModel } from './../../models/project.model';
+import { ProjectModel, ProjectsAdminModel, ProjectsCollaboratorsModel } from './../../models/project.model';
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from 'src/services/project.service';
 
@@ -11,6 +11,7 @@ export class ProjectComponent implements OnInit {
 
   public project: ProjectModel;
   public projectAdmin:ProjectsAdminModel[] = [];
+  public projectCollaborator: ProjectsCollaboratorsModel[] = [];
 
   constructor(
     private projectService: ProjectService,
@@ -21,10 +22,11 @@ export class ProjectComponent implements OnInit {
   }
 
   getProject(){
-    this.projectService.getProjectByID('PROJ6').subscribe((result:ProjectModel)=>{
+    this.projectService.getProjectByID('PROJ7').subscribe((result:ProjectModel)=>{
       this.project = result;
       console.log('Projeto',this.project)
       this.listAdmin(this.project.idProject);
+      this.getCollaborator(this.project.idProject);
     })
   }
 
@@ -32,6 +34,13 @@ export class ProjectComponent implements OnInit {
     this.projectService.getAdminByProject(idProject).subscribe((result:ProjectsAdminModel[])=>{
       this.projectAdmin = result;
       console.log('Admin',this.projectAdmin)
+    })
+  }
+
+  getCollaborator(idProject){
+    this.projectService.getCollaboratorByProject(idProject).subscribe((result:ProjectsCollaboratorsModel[]) =>{
+      this.projectCollaborator = result;
+      console.log('Colaborador',this.projectCollaborator)
     })
   }
 

@@ -44,17 +44,24 @@ export class ProjectService {
     });
   }
 
-  // TODO
-  getProjectByAdmin() {
-    this.http.get(`${environment.hubUrl}project/associate`).subscribe((data) => {
-      console.log(data);
-    });
+  getProjectByAdmin(id):Observable<any> {
+    const params = { codAdmin: id }
+    return this.http.get(`${environment.hubUrl}project/consultProject`, { params: params });
   }
 
-  // TODO
   getAdminByProject(id):Observable<any> {
     const params = { codProject: id }
     return this.http.get(`${environment.hubUrl}project/consultAdmin`, { params: params });
+  }
+
+  getCollaboratorByProject(id):Observable<any> {
+    const params = { codProject: id }
+    return this.http.get(`${environment.hubUrl}project/consultColaborator`, { params: params });
+  }
+
+  getProjectByCollaborator(id):Observable<any> {
+    const params = { codCollaborator: id }
+    return this.http.get(`${environment.hubUrl}project/consultColaboratorProject`, { params: params });
   }
 
   updateProject(data, authorization) {
@@ -65,8 +72,8 @@ export class ProjectService {
       codProject: data.codProject,
       linkGitProject: data.linkGitProject,
     }
-    return this.http.post(
-      `${environment.hubUrl}project/edit`,
+    return this.http.put(
+      `${environment.hubUrl}project`,
       { params: payload },
       { headers: header }
     );

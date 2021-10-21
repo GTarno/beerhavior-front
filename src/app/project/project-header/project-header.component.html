@@ -11,7 +11,7 @@
   >
     <a href="{{ project.linkGitProject }}" target="_blank">Git</a>
   </div>
-  <p>Administrador</p>
+  <p>Administradores</p>
   <ng-container *ngFor="let admin of admins">
     <p style="font-weight: bold">{{ admin.nameAdmin }}</p>
   </ng-container>
@@ -22,9 +22,9 @@
     <mat-expansion-panel-header>
       <mat-panel-title> Colaboradores </mat-panel-title>
     </mat-expansion-panel-header>
-    <p>Colaborador 1</p>
-    <p>Colaborador 2</p>
-    <p>Colaborador 3</p>
+    <ng-container *ngFor="let collaborator of collaborators">
+      <p>{{ collaborator.nameCollaborator }}</p>
+    </ng-container>
   </mat-expansion-panel>
   <button
     class="btn"

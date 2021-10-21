@@ -32,8 +32,8 @@ export class RegistrationService {
       emailAdmin: data.email,
       passwordAdmin: data.password,
     };
-    this.http.post(
-      `${environment.hubUrl}admin/edit`,
+    this.http.put(
+      `${environment.hubUrl}admin`,
       { params: payload },
       { headers: header }
     );

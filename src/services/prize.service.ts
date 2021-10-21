@@ -33,7 +33,7 @@ export class PrizeService {
       availabilityPrize: data.availabilityPrize,
       stockPrize: data.stockPrize,
     };
-    this.http.post(`${environment.hubUrl}prize/edit`, payload);
+    this.http.put(`${environment.hubUrl}prize`, payload);
   }
 
   deletePrize(id) {
