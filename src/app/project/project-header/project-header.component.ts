@@ -1,3 +1,4 @@
+import { ProjectsAdminModel } from './../../../models/project.model';
 import { MatDialog } from '@angular/material/dialog';
 import { AddColaboratorComponent } from './add-colaborator/add-colaborator.component';
 import { Component, OnInit, Input } from '@angular/core';
@@ -11,6 +12,7 @@ import { ProjectModel } from 'src/models/project.model';
 export class ProjectHeaderComponent implements OnInit {
 
   @Input() project: ProjectModel
+  @Input() admins: ProjectsAdminModel
   panelOpenState = false;
   constructor(
     private dialog: MatDialog,

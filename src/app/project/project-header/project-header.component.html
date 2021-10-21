@@ -1,14 +1,20 @@
 <mat-card>
   <div fxLayout="row" fxLayoutAlign="space-between start">
-    <h1>{{project.nameProject}}</h1>
-    <p>Código: {{project.codProject}}</p>
+    <h1>{{ project.nameProject }}</h1>
+    <p>Código: {{ project.codProject }}</p>
     <a>Editar</a>
   </div>
-  <div fxLayout="row" fxLayoutAlign="start start" style="margin: -20px 0 20px 0">
-    <a href="{{project.linkGitProject}}" target="_blank">Git</a>
+  <div
+    fxLayout="row"
+    fxLayoutAlign="start start"
+    style="margin: -20px 0 20px 0"
+  >
+    <a href="{{ project.linkGitProject }}" target="_blank">Git</a>
   </div>
   <p>Administrador</p>
-  <p style="font-weight: bold">Admin 1</p>
+  <ng-container *ngFor="let admin of admins">
+    <p style="font-weight: bold">{{ admin.nameAdmin }}</p>
+  </ng-container>
   <mat-expansion-panel
     (opened)="panelOpenState = true"
     (closed)="panelOpenState = false"
@@ -20,7 +26,12 @@
     <p>Colaborador 2</p>
     <p>Colaborador 3</p>
   </mat-expansion-panel>
-  <button class="btn" mat-raised-button color="primary" (click)="addColaborador()">
+  <button
+    class="btn"
+    mat-raised-button
+    color="primary"
+    (click)="addColaborador()"
+  >
     <mat-icon>add</mat-icon>
     Adicionar ou remover colaborador
   </button>

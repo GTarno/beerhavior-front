@@ -4,3 +4,8 @@ export interface ProjectModel {
   codProject: string;
   linkGitProject: string;
 }
+
+export interface ProjectsAdminModel {
+    admin: string;
+    nameAdmin: string;
+}

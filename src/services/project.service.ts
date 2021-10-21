@@ -52,10 +52,9 @@ export class ProjectService {
   }
 
   // TODO
-  getAdminByProject() {
-    this.http.get(`${environment.hubUrl}project/associate`).subscribe((data) => {
-      console.log(data);
-    });
+  getAdminByProject(id):Observable<any> {
+    const params = { codProject: id }
+    return this.http.get(`${environment.hubUrl}project/consultAdmin`, { params: params });
   }
 
   updateProject(data, authorization) {
