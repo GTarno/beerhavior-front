@@ -1,6 +1,7 @@
 import { MatDialog } from '@angular/material/dialog';
 import { AddColaboratorComponent } from './add-colaborator/add-colaborator.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProjectModel } from 'src/models/project.model';
 
 @Component({
   selector: 'app-project-header',
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectHeaderComponent implements OnInit {
 
+  @Input() project: ProjectModel
   panelOpenState = false;
   constructor(
     private dialog: MatDialog,
