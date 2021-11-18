@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -8,14 +9,16 @@ import { environment } from 'src/environments/environment';
 export class RegistrationService {
   constructor(private http: HttpClient) {}
 
-  adminRegistration(newUser) {
+  adminRegistration(newUser):Observable<any> {
+    console.log('payload recebido', newUser);
     const payload = {
       userAdmin: newUser.user,
       nameAdmin: newUser.name,
       emailAdmin: newUser.email,
       passwordAdmin: newUser.password,
     };
-    this.http.post(`${environment.hubUrl}admin`, payload);
+    console.log('tratado',payload);
+    return this.http.post(`${environment.hubUrl}admin`, payload);
   }
 
   listAdmin() {

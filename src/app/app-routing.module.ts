@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ProfileProgrammerComponent } from './profile-components/profile-programmer/profile-programmer.component';
+import { GenericErrorComponent } from './error/generic-error/generic-error.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -18,6 +19,8 @@ const routes: Routes = [
     { path: 'novo-projeto', component: NewProjectComponent },
     { path: 'projeto', component: ProjectComponent },
     { path: 'dashboard', component: DashboardComponent },
+    { path: 'erro', component: GenericErrorComponent },
+    { path: '', component: LoginComponent },
 ];
 
 @NgModule({

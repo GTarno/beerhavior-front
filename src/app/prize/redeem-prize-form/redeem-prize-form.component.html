@@ -5,8 +5,8 @@
         <mat-form-field appearance="fill">
           <mat-label>Escolha a recompensa</mat-label>
           <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{ food.viewValue }}
+            <mat-option *ngFor="let prize of prizes" [value]="prize.idPrize">
+              {{ prize.namePrize }}
             </mat-option>
           </mat-select>
         </mat-form-field>

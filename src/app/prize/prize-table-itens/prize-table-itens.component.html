@@ -1,28 +1,28 @@
 <div fxLayout="row" fxLayoutAlign="space-around stretch">
-    <table fxFlex mat-table [dataSource]="products">
-      <ng-container matColumnDef="name">
+    <table fxFlex mat-table [dataSource]="prizes">
+      <ng-container matColumnDef="namePrize">
         <th mat-header-cell *matHeaderCellDef>Produto</th>
-        <td mat-cell *matCellDef="let product">{{ product.name }}</td>
+        <td mat-cell *matCellDef="let prize">{{ prize.namePrize }}</td>
       </ng-container>
-      <ng-container matColumnDef="availability">
+      <ng-container matColumnDef="availabilityPrize">
         <th mat-header-cell *matHeaderCellDef>Disponibilidade</th>
-        <td mat-cell *matCellDef="let product">{{ product.availability }}</td>
+        <td mat-cell *matCellDef="let prize">{{ prize.availabilityPrize == 1 ? "Disponível" : "Indisponível" }}</td>
       </ng-container>
-      <ng-container matColumnDef="stock">
+      <ng-container matColumnDef="stockPrize">
         <th mat-header-cell *matHeaderCellDef>Estoque</th>
-        <td mat-cell *matCellDef="let product">{{ product.stock }}</td>
+        <td mat-cell *matCellDef="let prize">{{ prize.stockPrize }}</td>
       </ng-container>
-      <ng-container matColumnDef="price">
+      <ng-container matColumnDef="costPrize">
         <th mat-header-cell *matHeaderCellDef>Custo</th>
-        <td mat-cell *matCellDef="let product">{{ product.price }}</td>
+        <td mat-cell *matCellDef="let prize">{{ prize.costPrize }}</td>
       </ng-container>
       <ng-container *ngIf="admin == true" matColumnDef="edit">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let product"><a>Editar</a></td>
+        <td mat-cell *matCellDef="let prize"><a>Editar</a></td>
       </ng-container>
       <ng-container *ngIf="admin == true" matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let product"><a>Excluir</a></td>
+        <td mat-cell *matCellDef="let prize"><a>Excluir</a></td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="prizeColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: prizeColumns"></tr>

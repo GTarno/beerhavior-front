@@ -15,4 +15,8 @@ export class ProfileTypeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectType(type: string): void {
+    sessionStorage.setItem('profileType', this.type);
+  }
+
 }

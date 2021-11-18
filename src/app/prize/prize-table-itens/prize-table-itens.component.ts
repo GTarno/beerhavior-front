@@ -1,27 +1,38 @@
+import { PrizeModel } from './../../../models/prize.model';
+import { PrizeService } from './../../../services/prize.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-prize-table-itens',
   templateUrl: './prize-table-itens.component.html',
-  styleUrls: ['./prize-table-itens.component.css']
+  styleUrls: ['./prize-table-itens.component.css'],
 })
 export class PrizeTableItensComponent implements OnInit {
-
   @Input() admin: boolean;
-  products: any[]=[
-    {name: 'blabla', availability: 'blabla', stock: 'blabla', price: 'blabla'},
-    {name: 'lauren', availability: 'lauren', stock: 'lauren', price: 'lauren'}
-  ]
-    prizeColumns: string[]
-  constructor() { }
+  public prizes: PrizeModel[];
+  public prizeColumns: string[];
+  constructor(private prizeService: PrizeService) {}
 
   ngOnInit(): void {
     if (this.admin == true) {
-      this.prizeColumns =["name", "availability", "stock", "price", "edit","delete"];
+      this.prizeColumns = [
+        'namePrize',
+        'availabilityPrize',
+        'stockPrize',
+        'costPrize',
+        'edit',
+        'delete',
+      ];
+    } else {
+      this.prizeColumns = ['namePrize', 'availabilityPrize', 'stockPrize', 'costPrize'];
     }
-    else {
-      this.prizeColumns =["name", "availability", "stock", "price"];
-    }
+    this.getPrizes();
   }
 
+  getPrizes() {
+    this.prizeService.listPrize().subscribe((data: PrizeModel[]) => {
+      console.log(data);
+      this.prizes = data;
+    });
+  }
 }

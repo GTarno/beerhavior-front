@@ -1,3 +1,4 @@
+import { DashboardService } from 'src/services/dashboard.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPointsComponent implements OnInit {
 
-  constructor() { }
+  public totalScore: number;
+  constructor(
+    private dashboardService: DashboardService
+  ) { }
 
   ngOnInit(): void {
+    this.getTotalPoints();
+  }
+
+  getTotalPoints(){
+    this.dashboardService.getProjectTotalScore(1).subscribe(data => {
+      this.totalScore = data.totalScore
+    })
   }
 
 }

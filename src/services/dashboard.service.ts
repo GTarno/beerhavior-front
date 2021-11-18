@@ -12,22 +12,18 @@ export class DashboardService{
     private http: HttpClient
   ) { }
 
-  getProject(projectId: number){
-    const payload={
-      project: projectId
-    }
-    return this.http.post(`${environment.hubUrl}dashboard/project`, payload);
+  getProject(projectId):Observable<any>{
+    const params = { project: projectId }
+    return this.http.get(`${environment.hubUrl}dashboard/project`, { params: params });
   }
 
   getCollaborator(collaboratorId: string){
-    const payload={
-      collaborator: collaboratorId
-    }
-    return this.http.post(`${environment.hubUrl}dashboard/collaborator`, payload);
+    const params ={ collaborator: collaboratorId  }
+    return this.http.get(`${environment.hubUrl}dashboard/collaborator`, { params: params });
   }
 
   getProjectTotalScore(projectId):Observable<any> {
     const params = { project: projectId }
-    return this.http.get(`${environment.hubUrl}dashboard/project`, { params: params });
+    return this.http.get(`${environment.hubUrl}dashboard/project/total-score`, { params: params });
   }
 }
