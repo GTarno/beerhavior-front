@@ -1,5 +1,5 @@
 <mat-card>
     <div fxLayout="row" fxLayoutAlign="center center">
-      <button mat-stroked-button color="primary" matBadge="7" [matBadgeHidden]="hidden" (click)="pendency()">Pendências</button>
+      <button mat-stroked-button color="primary" [matBadge]="totalPendency" [matBadgeHidden]="hidden" (click)="pendency()">Pendências</button>
     </div>
   </mat-card>

@@ -1,6 +1,6 @@
 import { MaterialModule } from './material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,7 +43,10 @@ import { DashboardContentComponent } from './dashboard/dashboard-content/dashboa
 import { DashboardPointsComponent } from './dashboard/dashboard-points/dashboard-points.component';
 import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
+registerLocaleData(localePt);
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,7 +95,9 @@ import { HttpClientModule } from '@angular/common/http';
     ChartsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'pt-BR' }
+  ],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

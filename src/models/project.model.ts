@@ -15,3 +15,9 @@ export interface ProjectsCollaboratorsModel {
     collaborator: string;
     project: number;
 }
+
+export interface CollaboratorsProjectsModel {
+  nameProject: string;
+  collaborator: string;
+  project: number;
+}

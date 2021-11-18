@@ -3,11 +3,11 @@
   <div fxLayout="row" fxLayoutAlign="start center" class="spacing">
     <img src="./../../../assets/EiUGGxoWsAI7c1b.jpg" alt="beerhavior" />
     <div fxLayout="column" fxLayoutAlign="space-evenly start">
-      <h1>Nome</h1>
+      <h1>{{name}}</h1>
       <p *ngIf="admin == true" class="admin">Admin</p>
     </div>
   </div>
-  <p>Usuario</p>
+  <p>{{user}}</p>
   <mat-expansion-panel
     (opened)="panelOpenState = true"
     (closed)="panelOpenState = false"
@@ -15,9 +15,7 @@
     <mat-expansion-panel-header>
       <mat-panel-title> Projetos </mat-panel-title>
     </mat-expansion-panel-header>
-    <p class="clickable">Projeto 1</p>
-    <p>Projeto 2</p>
-    <p>Projeto 3</p>
+    <p class="clickable" *ngFor="let projeto of projectList">{{projeto.nameProject}}</p>
   </mat-expansion-panel>
   <button *ngIf="admin == true" class="btn" mat-raised-button color="primary" (click)="goToDashboard()">
     Dashboard

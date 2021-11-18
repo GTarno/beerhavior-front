@@ -1,18 +1,47 @@
-<mat-card>
-    <mat-card-subtitle>Colaborador</mat-card-subtitle>
-    <div fxLayout="row" fxLayoutAlign="start start">
-      <span class="material-icons" style="font-size: 40px"> person_add </span>
-      <div
-        fxLayout="column"
-        fxLayoutAlign="start start"
-        style="margin-left: 12px"
-      >
-        <p>Nome</p>
-        <p>Usuário</p>
+<div *ngIf="userPendency">
+  <div *ngFor="let pendency of userPendency">
+    <mat-card>
+      <mat-card-subtitle>Colaborador</mat-card-subtitle>
+      <div fxLayout="row" fxLayoutAlign="start start">
+        <span class="material-icons" style="font-size: 40px"> person_add </span>
+        <div
+          fxLayout="column"
+          fxLayoutAlign="start start"
+          style="margin-left: 12px"
+        >
+          <p>{{ pendency.nameCollaborator }}</p>
+          <p>{{ pendency.userCollaborator }}</p>
+        </div>
       </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="end start" style="margin-top: -40px">
-      <button mat-raised-button color="primary">Aprovar</button>
-      <button mat-button color="primary" class='btn'>Excluir</button>
-    </div>
-  </mat-card>
+      <div fxLayout="row" fxLayoutAlign="end start" style="margin-top: -40px">
+        <button mat-raised-button color="primary">Aprovar</button>
+        <button mat-button color="primary" class="btn">Excluir</button>
+      </div>
+    </mat-card>
+  </div>
+</div>
+<!-- Commit Pendency -->
+<div *ngIf="userPendency">
+  <div *ngFor="let pendency of commitPendency">
+    <mat-card>
+      <mat-card-subtitle>Commit</mat-card-subtitle>
+      <div fxLayout="row" fxLayoutAlign="start start">
+        <span class="material-icons" style="font-size: 40px"> commit </span>
+        <div
+          fxLayout="column"
+          fxLayoutAlign="start start"
+          style="margin-left: 12px"
+        >
+          <p>Total de pontos: {{ pendency.totalScore }}</p>
+          <p>{{ pendency.nameCollaborator }}</p>
+          <p>{{ pendency.commitCod }}</p>
+          <!-- TODO COLOCAR NOME DO COLABORADOR DO BACK -->
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end start" style="margin-top: -40px">
+        <button mat-raised-button color="primary">Aprovar</button>
+        <button mat-button color="primary" class="btn">Excluir</button>
+      </div>
+    </mat-card>
+  </div>
+</div>

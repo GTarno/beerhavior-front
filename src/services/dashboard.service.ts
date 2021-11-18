@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -23,5 +24,10 @@ export class DashboardService{
       collaborator: collaboratorId
     }
     return this.http.post(`${environment.hubUrl}dashboard/collaborator`, payload);
+  }
+
+  getProjectTotalScore(projectId):Observable<any> {
+    const params = { project: projectId }
+    return this.http.get(`${environment.hubUrl}dashboard/project`, { params: params });
   }
 }

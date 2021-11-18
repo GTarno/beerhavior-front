@@ -1,7 +1,7 @@
 import { RedeemPrizeComponent } from './../../prize/redeem-prize/redeem-prize.component';
 import { MatDialog } from '@angular/material/dialog';
 import { PrizeTableComponent } from 'src/app/prize/prize-table/prize-table.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-profile-score',
@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileScoreComponent implements OnInit {
 
+  @Input() score: number
   public isAdmin: boolean = false;
   constructor(
     public dialog: MatDialog

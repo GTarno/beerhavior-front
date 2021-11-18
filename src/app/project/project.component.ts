@@ -1,6 +1,7 @@
 import { ProjectModel, ProjectsAdminModel, ProjectsCollaboratorsModel } from './../../models/project.model';
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from 'src/services/project.service';
+import { DashboardService } from 'src/services/dashboard.service';
 
 @Component({
   selector: 'app-project',
@@ -12,9 +13,11 @@ export class ProjectComponent implements OnInit {
   public project: ProjectModel;
   public projectAdmin:ProjectsAdminModel[] = [];
   public projectCollaborator: ProjectsCollaboratorsModel[] = [];
+  public projectTotalScore: number = 0;
 
   constructor(
     private projectService: ProjectService,
+    private dashboardService: DashboardService,
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +30,7 @@ export class ProjectComponent implements OnInit {
       console.log('Projeto',this.project)
       this.listAdmin(this.project.idProject);
       this.getCollaborator(this.project.idProject);
+      this.getProjectTotalScore(this.project.idProject);
     })
   }
 
@@ -42,6 +46,13 @@ export class ProjectComponent implements OnInit {
       this.projectCollaborator = result;
       console.log('Colaborador',this.projectCollaborator)
     })
+  }
+
+  getProjectTotalScore(idProject){
+    this.dashboardService.getProjectTotalScore(idProject).subscribe((result=>{
+      this.projectTotalScore = result;
+      console.log('Project Total Score',this.projectTotalScore)
+    }))
   }
 
 }

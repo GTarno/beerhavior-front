@@ -1,6 +1,7 @@
+import { PendencyService } from './../../../services/pendecy.service';
 import { PendencyComponent } from './pendency/pendency.component';
 import { MatDialog } from '@angular/material/dialog';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-project-pendency',
@@ -8,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-pendency.component.css'],
 })
 export class ProjectPendencyComponent implements OnInit {
-  hidden = false;
+  public hidden = false;
+  public totalPendency: any
+  @Input() idProject: number
 
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private pendencyService: PendencyService
+    ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('pendency id project',this.idProject);
+    this.getPendency(this.idProject);
+  }
 
   pendency(): void {
     const dialogRef = this.dialog.open(PendencyComponent, {
@@ -22,5 +31,10 @@ export class ProjectPendencyComponent implements OnInit {
       console.log('The dialog was closed');
     });
     this.hidden = !this.hidden;
+  }
+
+  getPendency(idProject){
+    this.totalPendency = this.pendencyService.getTotalPendency(idProject)
+    console.log('total',this.totalPendency);
   }
 }
