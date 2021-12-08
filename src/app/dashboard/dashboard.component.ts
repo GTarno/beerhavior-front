@@ -9,17 +9,11 @@ import { DashboardService } from 'src/services/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  public dashboardByProject: DashboardModel[]
-
   constructor(
-    private dashboardService: DashboardService
   ) { }
 
   ngOnInit(): void {
-    this.dashboardService.getProject(1).subscribe((result :DashboardModel[])=>{
-      console.log(result);
-      this.dashboardByProject = result;
-    })
+    
   }
 
 }

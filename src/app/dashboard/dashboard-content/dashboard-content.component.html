@@ -3,16 +3,15 @@
     <h2>Escolha o projeto</h2>
     <mat-form-field appearance="fill">
       <mat-label>Projeto</mat-label>
-      <select matNativeControl required>
-        <option value="volvo">PROJ7225</option>
-        <option value="saab">PROJ8235</option>
-        <option value="mercedes">PROJ5535</option>
-        <option value="audi">PROJ7235</option>
-      </select>
+      <mat-select [(ngModel)]="idProject" name="project">
+        <mat-option *ngFor="let project of projectList" [value]="project.idProject" >
+          {{project.codProject}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
-    <button mat-raised-button color="primary" style="margin-bottom: 10px;">Ir</button>
+    <button mat-raised-button color="primary" style="margin-bottom: 10px;" (click)="getScore(idProject)">Ir</button>
   </div>
-  <app-dashboard-points></app-dashboard-points>
+  <app-dashboard-points [totalScore]="totalScore"></app-dashboard-points>
   <div style="display: block">
     <canvas
       baseChart
@@ -26,7 +25,8 @@
     >
     </canvas>
   </div>
-  <div style="display: block; margin-top: 2rem">
+  <!-- TODO Resolver problema no back que retorna pontos por colaborador -->
+  <!-- <div style="display: block; margin-top: 2rem">
     <canvas
       baseChart
       [datasets]="barChartData"
@@ -38,5 +38,5 @@
       [colors]="barChartColor"
     >
     </canvas>
-  </div>
+  </div> -->
 </mat-card>

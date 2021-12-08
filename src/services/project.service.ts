@@ -20,10 +20,8 @@ export class ProjectService {
     return this.http.post(`${environment.hubUrl}project`, payload);
   }
 
-  listProject() {
-    this.http.get(`${environment.hubUrl}project`).subscribe((data) => {
-      console.log(data);
-    });
+  listProject():Observable<any> {
+    return this.http.get(`${environment.hubUrl}project`)
   }
 
   associateProject(project,authorization){

@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="totalScore != null">
   <div fxLayout="row" fxLayoutAlign="center center">
     <h1>Pontos disponíveis para resgate: {{totalScore | number}}</h1>
   </div>

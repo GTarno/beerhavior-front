@@ -15,13 +15,13 @@ export class RegisterFormComponentComponent implements OnInit {
   email: string;
   password: string;
   validatePassword: string;
-  registrationControl = new FormGroup({
-    user: new FormControl('', [Validators.required]),
-    name: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
-    registrationControl: new FormControl('', [Validators.required]),
-  });
+  // registrationControl = new FormGroup({
+  //   user: new FormControl('', [Validators.required]),
+  //   name: new FormControl('', [Validators.required]),
+  //   email: new FormControl('', [Validators.required, Validators.email]),
+  //   password: new FormControl('', [Validators.required]),
+  //   registrationControl: new FormControl('', [Validators.required]),
+  // });
 
   constructor(
     private registrationService: RegistrationService,

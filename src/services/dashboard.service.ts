@@ -26,4 +26,24 @@ export class DashboardService{
     const params = { project: projectId }
     return this.http.get(`${environment.hubUrl}dashboard/project/total-score`, { params: params });
   }
+
+  getProjectTestScore(projectId):Observable<any> {
+    const params = { project: projectId }
+    return this.http.get(`${environment.hubUrl}dashboard/project/test-score`, { params: params });
+  }
+
+  getProjectPraticesScore(projectId):Observable<any> {
+    const params = { project: projectId }
+    return this.http.get(`${environment.hubUrl}dashboard/project/pratices-score`, { params: params });
+  }
+
+  getProjectCodeScore(projectId):Observable<any> {
+    const params = { project: projectId }
+    return this.http.get(`${environment.hubUrl}dashboard/project/code-score`, { params: params });
+  }
+
+  getProjectCollaboratorScore(projectId):Observable<any> {
+    const params = { project: projectId }
+    return this.http.get(`${environment.hubUrl}dashboard/project/total-collaborator`, { params: params });
+  }
 }
